@@ -1,0 +1,26 @@
+@keyframes blink {
+  0%, 100% { 
+    opacity: 1; 
+  }
+  50% { 
+    opacity: 0; 
+  }
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  color: #07FE18;
+  /* Base size for mobile */
+  font-size: 40px;
+}
+
+/* Larger size for desktop */
+@media (min-width: 768px) {
+  .typewriter-cursor {
+    font-size: 60px;
+  }
+}
+
+.typewriter-cursor.blinking {
+  animation: blink 1s step-end infinite;
+}
