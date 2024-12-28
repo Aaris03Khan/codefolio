@@ -21,7 +21,7 @@ export const Hero = () => {
   });
 
   useEffect(() => {
-    // Set up function to recalc dimension-based values
+    // Calculate dimension-based on values
     function updateDimensions() {
       setDimensions({
         scrollThreshold: window.innerHeight * 0.7,
@@ -51,18 +51,6 @@ export const Hero = () => {
   const initialImageSize = 150;  // Memoji size at start
   const scaleFactor = finalImageSize / initialImageSize;
 
-  /**
-   * finalXOffset is the final horizontal position
-   * at which the memoji stops (negative = moves left).
-   *
-   * We'll tweak each breakpoint so that on:
-   * - large desktop
-   * - laptop ( ~1024px )
-   * - tablet ( ~768px )
-   * - mobile ( < 768px )
-   *
-   * the memoji is positioned near your navbar icon.
-   */
   const finalXOffset = useMemo(() => {
     const w = dimensions.innerWidth;
 
@@ -84,7 +72,6 @@ export const Hero = () => {
     return offset;
   }, [dimensions.innerWidth]);
 
-  // Now use that finalXOffset in the array for imageX’s final value.
   const imageX = useTransform(
     scrollY,
     [
