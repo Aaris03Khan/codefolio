@@ -17,7 +17,7 @@ export const ThemeToggle = () => {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="fixed top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-800"
+      className="p-2 rounded-full bg-gray-200 dark:bg-gray-800"
     >
       {theme === 'dark' ? '🌞' : '🌙'}
     </motion.button>
