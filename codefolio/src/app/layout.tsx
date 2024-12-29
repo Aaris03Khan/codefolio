@@ -9,6 +9,10 @@ const ibmPlexMono = IBM_Plex_Mono({
   display: 'swap',
 })
 
+export const metadata = {
+  title: 'Aaris Khan',
+}
+
 export default function RootLayout({
   children,
 }: {
