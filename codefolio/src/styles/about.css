@@ -1,0 +1,15 @@
+/* about.css */
+.welcome-scroll {
+    white-space: nowrap;
+    animation: marquee 15s linear infinite;
+}
+  
+@keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Add smooth transition for scroll-based movement */
+.transition-transform {
+    transition: transform 0.075s ease-out;
+}
