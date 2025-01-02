@@ -22,7 +22,7 @@ export const TypewriterEffect = ({
   // Trigger the onComplete callback when the last message is done typing
   useEffect(()=>{
     if(isTypingDone){
-      if(completedCount === messages.length - 1){
+      if(completedCount === 1){
         onComplete?.()
       }
       else{

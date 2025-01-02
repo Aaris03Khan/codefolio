@@ -1,4 +1,4 @@
-/* about.css */
+/* Keep existing welcome-scroll animation */
 .welcome-scroll {
     white-space: nowrap;
     animation: marquee 15s linear infinite;
@@ -9,7 +9,46 @@
     100% { transform: translateX(-100%); }
 }
 
-/* Add smooth transition for scroll-based movement */
-.transition-transform {
-    transition: transform 0.075s ease-out;
+/* Enhanced glow effect with 4 distinct colors */
+.glow-effect {
+    position: relative;
+    display: inline-block;
+}
+
+.glow-effect::before {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 255, 255, 0.4),    /* Cyan */
+        rgba(0, 255, 0, 0.4),      /* Green */
+        rgba(128, 0, 255, 0.4),    /* Purple */
+        rgba(255, 0, 128, 0.4)     /* Pink */
+    );
+    background-size: 300% 300%;
+    border-radius: 50%;
+    z-index: 1;
+    filter: blur(30px);
+    opacity: 0.8;
+    animation: colorRotate 6s linear infinite;
+}
+
+@keyframes colorRotate {
+    0% {
+        transform: rotate(0deg);
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        transform: rotate(360deg);
+        background-position: 0% 50%;
+    }
+}
+
+/* Dark mode adjustment */
+.dark .glow-effect::before {
+    opacity: 0.9;
 }

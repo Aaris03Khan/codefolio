@@ -8,7 +8,6 @@ import { useState, useEffect, useRef, useMemo } from "react";
 
 export const Hero = () => {
   const [showArrows, setShowArrows] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const containerRef = useRef<HTMLElement>(null);
   const { scrollY } = useScroll();
 
@@ -33,16 +32,8 @@ export const Hero = () => {
     updateDimensions();
     window.addEventListener("resize", updateDimensions);
 
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("resize", updateDimensions);
-      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -150,7 +141,7 @@ export const Hero = () => {
           </div>
 
           {/* Scroll arrows */}
-          {showArrows && !isScrolled && (
+          {showArrows && (
             <div className="absolute bottom-20 z-0">
               <motion.div className="flex flex-col">
                 <motion.div
